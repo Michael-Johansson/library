@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  width: 100vw;
+}
+
+:root {
+  --light-text: rgb(100, 115, 115);
+  --dark-text: #212121;
+  --green: #58e969;
+  --red: #ff6464;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 1.5rem 0;
+}
+
+#add-book-btn {
+  padding: 5px 25px;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 15px;
+
+  min-width: 240px;
+  box-shadow: 0px 10px 13px 0px #3333330e;
+}
+
+#title {
+  color: var(--dark-text);
+  font-weight: 600;
+}
+
+#author {
+  color: var(--light-text);
+}
+
+#pages {
+  color: var(--dark-text);
+  font-weight: 300;
+}
+
+#read {
+  width: max-content;
+  padding: 5px 25px;
+}
