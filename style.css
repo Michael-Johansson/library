@@ -22,7 +22,7 @@ body {
   margin: 0 auto;
 }
 
-#header {
+.header {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -48,21 +48,21 @@ body {
   box-shadow: 0px 10px 13px 0px #3333330e;
 }
 
-#title {
+.title {
   color: var(--dark-text);
   font-weight: 600;
 }
 
-#author {
+.author {
   color: var(--light-text);
 }
 
-#pages {
+.pages {
   color: var(--dark-text);
   font-weight: 300;
 }
 
-#read {
+.read {
   width: max-content;
   padding: 5px 25px;
 }
