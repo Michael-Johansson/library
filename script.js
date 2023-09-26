@@ -22,7 +22,7 @@ function addBookToLibrary() {
     const checkBox = document.getElementById("read");
     return checkBox.checked == true ? true : false;
   };
-  console.log(isRead);
+
   const newBook = new Book(title, author, pages, isRead());
   mylibrary.push(newBook);
   renderBooks();
