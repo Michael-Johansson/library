@@ -33,7 +33,7 @@ function renderBooks() {
     container.removeChild(container.firstChild);
   }
 
-  mylibrary.forEach((book) => {
+  mylibrary.forEach((book, index) => {
     const bookCard = document.createElement("div");
     bookCard.classList.add("card");
     container.appendChild(bookCard);
@@ -57,6 +57,10 @@ function renderBooks() {
     bookPages.textContent = `${book.pages} pages`;
     bookInfo.appendChild(bookPages);
 
+    const buttonGroup = document.createElement("div");
+    buttonGroup.classList.add("book-buttons");
+    bookCard.appendChild(buttonGroup);
+
     const isRead = document.createElement("button");
     isRead.classList.add("read");
 
@@ -68,7 +72,7 @@ function renderBooks() {
       isRead.textContent = "Not read";
       isRead.style.backgroundColor = "#ff6464";
     }
-    bookCard.appendChild(isRead);
+    buttonGroup.appendChild(isRead);
 
     isRead.addEventListener("click", () => {
       if (book.read == false) {
@@ -79,7 +83,21 @@ function renderBooks() {
 
       renderBooks();
     });
+
+    const deleteBook = document.createElement("button");
+    deleteBook.textContent = "Delete";
+    deleteBook.classList.add("delete-book");
+    buttonGroup.appendChild(deleteBook);
+
+    deleteBook.addEventListener("click", () => {
+      removeBook(index);
+      renderBooks();
+    });
   });
+}
+
+function removeBook(index) {
+  return mylibrary.splice(index, 1);
 }
 
 addBookBtn.addEventListener("click", () => {

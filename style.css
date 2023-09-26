@@ -95,7 +95,6 @@ dialog {
   top: 50%;
   transform: translateY(-50%);
   margin: auto;
-
 }
 
 #book-form {
@@ -105,7 +104,6 @@ dialog {
   max-width: 450px;
   justify-content: space-around;
   padding: 15px;
-
 }
 
 #book-form input {
@@ -121,6 +119,25 @@ dialog {
 #book-form button {
   padding: 10px 0px;
   cursor: pointer;
+}
+
+.book-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-book {
+  width: fit-content;
+  border: 1px solid var(--light-text);
+  border-radius: 5px;
+  padding: 3px 20px;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.2s all ease-in-out;
+}
+
+.delete-book:hover {
+  background-color: #ff6464;
 }
 
 @media screen and (max-width: 510px) {
