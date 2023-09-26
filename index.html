@@ -19,16 +19,22 @@
         <h1>Library</h1>
         <button id="add-book-btn">Add Book</button>
       </header>
-      <main id="container">
-        <div class="card">
-          <div class="book-info">
-            <h3 class="title">Title sdfsdfs</h3>
-            <p class="author">Author</p>
-            <p class="pages">250 pages</p>
+      <main id="container"></main>
+      <dialog id="dialog">
+        <form method="dialog" id="book-form">
+          <input type="text" id="title" placeholder="Title" />
+          <input type="text" id="author" placeholder="Author" />
+          <input type="number" id="pages" placeholder="Pages" />
+          <div>
+            <label for="read">Have you read this book?</label>
+            <input type="checkbox" id="read" />
           </div>
-          <button class="read">Read</button>
-        </div>
-      </main>
+          <button id="submit-btn" type="submit">Submit</button>
+        </form>
+      </dialog>
     </div>
+    <footer id="footer">
+      <p>Made with ❤️ by Michael</p>
+    </footer>
   </body>
 </html>

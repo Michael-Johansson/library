@@ -6,7 +6,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  width: 100vw;
+  background-color: #f3f3f3;
 }
 
 :root {
@@ -20,6 +20,7 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 10px;
 }
 
 .header {
@@ -36,6 +37,7 @@ body {
 #container {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
 }
 
 .card {
@@ -46,6 +48,8 @@ body {
 
   min-width: 240px;
   box-shadow: 0px 10px 13px 0px #3333330e;
+  background-color: white;
+  border-radius: 5px;
 }
 
 .title {
@@ -65,4 +69,64 @@ body {
 .read {
   width: max-content;
   padding: 5px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.read:hover {
+  filter: brightness(0.9);
+  transition: all 0.2s ease-in-out;
+}
+
+#footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 15px 0;
+
+  font-weight: 500;
+}
+
+dialog {
+  top: 50%;
+  transform: translateY(-50%);
+  margin: auto;
+
+}
+
+#book-form {
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  max-width: 450px;
+  justify-content: space-around;
+  padding: 15px;
+
+}
+
+#book-form input {
+  padding: 5px 10px;
+}
+
+#book-form div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#book-form button {
+  padding: 10px 0px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 510px) {
+  .card {
+    flex: 1;
+    align-items: center;
+    text-align: center;
+  }
 }

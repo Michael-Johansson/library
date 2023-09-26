@@ -3,6 +3,9 @@
 const mylibrary = [];
 const container = document.getElementById("container");
 const addBookBtn = document.getElementById("add-book-btn");
+const submitBookbtn = document.getElementById("submit-btn");
+const dialog = document.getElementById("dialog");
+const bookForm = document.getElementById("book-form");
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -12,12 +15,15 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary() {
-  const title = prompt("Title?");
-  const author = prompt("Author?");
-  const pages = prompt("Pages?");
-  const isRead = prompt("Have you read this book?");
-  const newBook = new Book(title, author, pages, isRead);
-
+  const title = document.getElementById("title").value;
+  const author = document.getElementById("author").value;
+  const pages = document.getElementById("pages").value;
+  const isRead = () => {
+    const checkBox = document.getElementById("read");
+    return checkBox.checked == true ? true : false;
+  };
+  console.log(isRead);
+  const newBook = new Book(title, author, pages, isRead());
   mylibrary.push(newBook);
   renderBooks();
 }
@@ -53,9 +59,34 @@ function renderBooks() {
 
     const isRead = document.createElement("button");
     isRead.classList.add("read");
-    isRead.textContent = book.read;
+
+    if (book.read == true) {
+      isRead.textContent = "Read";
+      isRead.style.backgroundColor = "#58e969";
+    } else if (book.read == false) {
+      book.read == "off";
+      isRead.textContent = "Not read";
+      isRead.style.backgroundColor = "#ff6464";
+    }
     bookCard.appendChild(isRead);
+
+    isRead.addEventListener("click", () => {
+      if (book.read == false) {
+        book.read = true;
+      } else if (book.read == true) {
+        book.read = false;
+      }
+
+      renderBooks();
+    });
   });
 }
 
-addBookBtn.addEventListener("click", addBookToLibrary);
+addBookBtn.addEventListener("click", () => {
+  dialog.show();
+});
+
+submitBookbtn.addEventListener("click", () => {
+  addBookToLibrary();
+  dialog.close();
+});
