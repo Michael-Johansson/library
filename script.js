@@ -6,6 +6,9 @@ const addBookBtn = document.getElementById("add-book-btn");
 const submitBookbtn = document.getElementById("submit-btn");
 const dialog = document.getElementById("dialog");
 const bookForm = document.getElementById("book-form");
+const title = document.getElementById("title");
+const author = document.getElementById("author");
+const pages = document.getElementById("pages");
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -105,6 +108,14 @@ addBookBtn.addEventListener("click", () => {
 });
 
 submitBookbtn.addEventListener("click", () => {
-  addBookToLibrary();
+  if (!title.value || !author.value || !pages.value) {
+    return;
+  } else addBookToLibrary();
   dialog.close();
+});
+
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    dialog.close();
+  }
 });
