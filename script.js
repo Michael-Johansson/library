@@ -66,11 +66,11 @@ function renderBooks() {
 
     if (book.read == true) {
       isRead.textContent = "Read";
-      isRead.style.backgroundColor = "#58e969";
+      isRead.style.backgroundColor = "#92d79a";
     } else if (book.read == false) {
       book.read == "off";
       isRead.textContent = "Not read";
-      isRead.style.backgroundColor = "#ff6464";
+      isRead.style.backgroundColor = "#f77979";
     }
     buttonGroup.appendChild(isRead);
 
@@ -85,7 +85,7 @@ function renderBooks() {
     });
 
     const deleteBook = document.createElement("button");
-    deleteBook.textContent = "Delete";
+    deleteBook.textContent = "X";
     deleteBook.classList.add("delete-book");
     buttonGroup.appendChild(deleteBook);
 
