@@ -104,6 +104,7 @@ function removeBook(index) {
 }
 
 addBookBtn.addEventListener("click", () => {
+  bookForm.reset();
   dialog.show();
 });
 
